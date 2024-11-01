@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import DownloadButton from './components/DownloadButton/DownloadButton';
 
-function App() {
+const App = () => {
+  // Путь к файлу в папке public
+  const pdfUrl = `${process.env.PUBLIC_URL}/Maqola.pdf`;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Скачать PDF</h1>
+      <DownloadButton fileUrl={pdfUrl} fileName="Maqola.pdf" />
     </div>
   );
-}
+};
 
 export default App;
